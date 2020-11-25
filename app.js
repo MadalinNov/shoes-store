@@ -1,9 +1,11 @@
 const burger = document.getElementById("burger");
 const navLinks = document.getElementById("Links");
-const carousel = document.querySelector(".Carousel");
 const navBar = document.getElementById("Navbar");
 const navLink = document.querySelectorAll("a");
 const cardsContainer = document.querySelector(".cards--container");
+const chooseSubmenu = document.getElementById("Submenu");
+const menSubmenu = document.querySelectorAll("#men-submenu");
+const cart = document.getElementById("cart");
 ///////////EVENTS
 ///Window resize
 window.addEventListener("resize", () => {
@@ -47,4 +49,16 @@ document.addEventListener("scroll", (e) => {
   scrollY >= 200
     ? cardsContainer.classList.add("fade")
     : cardsContainer.classList.remove("fade");
+});
+////submenu active
+chooseSubmenu.addEventListener("click", () => {
+  document.querySelector(".submenu").classList.toggle("submenu--active");
+});
+menSubmenu.forEach((menu) => {
+  menu.addEventListener("click", () => {
+    document.querySelector(".men-submenu").classList.toggle("submenu--active");
+  });
+});
+cart.addEventListener("click", () => {
+  document.querySelector(".cart--bar").classList.toggle("cart--active");
 });
