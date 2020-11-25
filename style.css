@@ -1,0 +1,568 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: auto;
+  font-family: "Poppins", sans-serif;
+  background-color: #f6f5f1;
+  overflow-x: hidden;
+}
+
+body .Global--wrapper {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+body .Global--wrapper #Navbar {
+  width: 100%;
+  padding: 0 50px;
+  margin: auto;
+  z-index: 1001;
+}
+
+body .Global--wrapper #Navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body .Global--wrapper #Navbar #burger {
+  display: none;
+  width: 35px;
+  height: 20px;
+  position: fixed;
+  left: 90%;
+  top: 2%;
+  -webkit-transform: translate(-90%);
+          transform: translate(-90%);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+body .Global--wrapper #Navbar #burger span {
+  pointer-events: none;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  border-radius: 5px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+body .Global--wrapper #Navbar #burger span:nth-child(1) {
+  width: 100%;
+  right: 0;
+}
+
+body .Global--wrapper #Navbar #burger span:nth-child(2) {
+  width: 75%;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+body .Global--wrapper #Navbar #burger span:nth-child(3) {
+  width: 100%;
+  bottom: 0;
+  right: 0;
+}
+
+body .Global--wrapper #Navbar #burger:hover span:nth-child(1), body .Global--wrapper #Navbar #burger:hover span:nth-child(3) {
+  width: 75%;
+  right: 0;
+}
+
+body .Global--wrapper #Navbar #burger:hover span:nth-child(2) {
+  width: 100%;
+}
+
+body .Global--wrapper #Navbar .Actual--nav {
+  width: 100%;
+  height: 70px;
+}
+
+body .Global--wrapper #Navbar .Actual--nav #cart {
+  position: absolute;
+  font-size: 1.5rem;
+  right: 0;
+  margin: 20px 50px;
+  color: #898b8a;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+body .Global--wrapper #Navbar .Actual--nav .Nav--links {
+  position: fixed;
+  width: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  z-index: 1001;
+}
+
+body .Global--wrapper #Navbar .Actual--nav .Nav--links:hover {
+  -webkit-box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+body .Global--wrapper #Navbar .Actual--nav .Nav--links .Nav--link {
+  font-size: 26px;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #898b8a;
+}
+
+body .Global--wrapper #Navbar .Actual--nav .Nav--links .Nav--link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background-color: #898b8a;
+  width: 0;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+body .Global--wrapper #Navbar .Actual--nav .Nav--links .Nav--link:hover::after {
+  width: 100%;
+}
+
+body .Global--wrapper #Navbar .Actual--nav .Nav--links--Scroll--anim {
+  width: 100%;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+body .Global--wrapper #Navbar .Actual--nav .Nav--links--Scroll--anim .Nav--link {
+  color: white;
+}
+
+body .Global--wrapper #Navbar .Actual--nav .sidebar {
+  width: 50%;
+  height: 100vh;
+  background-color: transparent;
+  list-style: none;
+  right: 0;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateX(1000px);
+          transform: translateX(1000px);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  -webkit-backdrop-filter: blur(2px) grayscale(1) contrast(0.3);
+          backdrop-filter: blur(2px) grayscale(1) contrast(0.3);
+  z-index: 999;
+}
+
+body .Global--wrapper #Navbar .Actual--nav .sidebar .Nav--link {
+  font-size: 25px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  color: white;
+}
+
+body .Global--wrapper #Navbar .Actual--nav .sidebar .Nav--link:hover {
+  text-decoration: line-through;
+}
+
+body .Global--wrapper #Navbar .Actual--nav .sidebar--active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+body .Global--wrapper #Header--section {
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+body .Global--wrapper #Header--section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background: url(Images/rsz_pexels-ray-piedra-1478442-min.jpg);
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  -webkit-filter: contrast(0.5);
+          filter: contrast(0.5);
+}
+
+body .Global--wrapper #Header--section .Cursor--effect {
+  pointer-events: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: relative;
+  -webkit-backdrop-filter: contrast(2);
+          backdrop-filter: contrast(2);
+}
+
+body .Global--wrapper #Header--section .Header--text {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .Global--wrapper #Header--section .Header--text h1 {
+  font-size: 6rem;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+body .Global--wrapper #Header--section .Header--text p {
+  color: white;
+  font-size: 25px;
+}
+
+body .Global--wrapper #Header--section .Header--text button {
+  margin-top: 100px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  width: 120px;
+  height: 70px;
+  background-color: transparent;
+  color: white;
+  font-size: 1.2rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  -webkit-backdrop-filter: grayscale(1);
+          backdrop-filter: grayscale(1);
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  outline: none;
+}
+
+body .Global--wrapper #Header--section .Header--text button:hover {
+  -webkit-backdrop-filter: contrast(1.5);
+          backdrop-filter: contrast(1.5);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+body .Global--wrapper #Header--section .Header--text button:active {
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
+}
+
+body .Global--wrapper #Header--section .Carousel {
+  width: 1000px;
+  height: 300px;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 5%);
+          transform: translate(-50%, 5%);
+}
+
+body .Global--wrapper #Header--section .Carousel .Carousel--container {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .Global--wrapper #Header--section .Carousel .Carousel--container .img--container {
+  width: 300px;
+  height: 300px;
+  border: 1px solid white;
+  position: relative;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+body .Global--wrapper #Header--section .Carousel .Carousel--container .img--container:nth-child(1) {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+body .Global--wrapper #Header--section .Carousel .Carousel--container .img--container:hover {
+  -webkit-box-shadow: inset 0 0 10px 10px rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0 0 10px 10px rgba(255, 255, 255, 0.2);
+}
+
+body .Global--wrapper #Header--section .Carousel .Carousel--container .img--container:hover img {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+body .Global--wrapper #Header--section .Carousel .Carousel--container .img--container:hover:nth-child(1) img {
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+
+body .Global--wrapper #Header--section .Carousel .Carousel--container .img--container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+body .Global--wrapper #Header--section .Carousel .Controls {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .Global--wrapper #Header--section .Carousel .Controls button {
+  cursor: pointer;
+}
+
+body .Global--wrapper #New--stock {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+body .Global--wrapper #New--stock h1 {
+  margin-top: 50px;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+body .Global--wrapper #New--stock .cards--container {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  opacity: 0;
+  -webkit-transform: translateY(500px);
+          transform: translateY(500px);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+body .Global--wrapper #New--stock .cards--container .card {
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #8a8a8a;
+  -webkit-box-shadow: 2px 2px 10px #929191;
+          box-shadow: 2px 2px 10px #929191;
+}
+
+body .Global--wrapper #New--stock .cards--container .card .card-head {
+  cursor: pointer;
+  width: 100%;
+  height: 70%;
+}
+
+body .Global--wrapper #New--stock .cards--container .card .card-head::before {
+  width: 100%;
+  height: 75%;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: lightcoral;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+body .Global--wrapper #New--stock .cards--container .card .card-head img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  pointer-events: none;
+}
+
+body .Global--wrapper #New--stock .cards--container .card .card-head span {
+  position: absolute;
+  width: 50%;
+  background-color: lightblue;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border-radius: 0 0 10px 10px;
+  color: white;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  text-transform: uppercase;
+}
+
+body .Global--wrapper #New--stock .cards--container .card .card-body {
+  width: 100%;
+  height: 30%;
+  text-align: center;
+}
+
+body .Global--wrapper #New--stock .cards--container .card .card-body h1 {
+  font-size: 1.2rem;
+}
+
+body .Global--wrapper #New--stock .cards--container .card:hover .card-head img {
+  -webkit-transform: scale(1.3) rotateZ(-45deg) rotateY(10deg);
+          transform: scale(1.3) rotateZ(-45deg) rotateY(10deg);
+  -webkit-filter: drop-shadow(-20px 10px 4px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(-20px 10px 4px rgba(0, 0, 0, 0.2));
+}
+
+body .Global--wrapper #New--stock .cards--container .card:hover .card-head::before {
+  width: 80%;
+  height: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+body .Global--wrapper #New--stock .cards--container .card:hover .card-head span {
+  background-color: lightcoral;
+}
+
+body .Global--wrapper #New--stock .fade {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+@media screen and (max-width: 1000px), screen and (max-device-width: 1000px) {
+  body .Global--wrapper #Navbar .Actual--nav .Nav--links {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 886px), screen and (max-device-width: 886px) {
+  body .Global--wrapper #Navbar .Actual--nav .Nav--links {
+    width: 50%;
+  }
+  body .Global--wrapper #Navbar .Actual--nav .Nav--links .Nav--link {
+    font-size: 22px;
+  }
+  body .Global--wrapper #Header--section {
+    margin-top: 70px;
+  }
+  body .Global--wrapper #Header--section::before {
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 768px), screen and (max-device-width: 768px) {
+  body .Global--wrapper #Navbar {
+    height: 50px;
+  }
+  body .Global--wrapper #Navbar #burger {
+    display: block;
+  }
+  body .Global--wrapper #Navbar .Actual--nav #cart {
+    left: 0;
+    margin: 5px 20px;
+  }
+  body .Global--wrapper #Navbar .Actual--nav .Nav--links .Nav--link {
+    display: none;
+  }
+  body .Global--wrapper #Navbar .Actual--nav .sidebar {
+    width: 100%;
+  }
+  body .Global--wrapper #Header--section {
+    margin: 0;
+  }
+  body .Global--wrapper #Header--section::before {
+    background-size: 150% 100%;
+  }
+  body .Global--wrapper #Header--section #Cursor {
+    display: none;
+  }
+  body .Global--wrapper #Header--section .Header--text h1 {
+    font-size: 2.4rem;
+    margin: 0 10px;
+  }
+  body .Global--wrapper #New--stock .cards--container .card {
+    margin: 10px auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */
