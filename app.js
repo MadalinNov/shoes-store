@@ -44,10 +44,7 @@ document.addEventListener("scroll", (e) => {
   scrollY >= 100
     ? navLinks.classList.add("Nav--links--Scroll--anim")
     : navLinks.classList.remove("Nav--links--Scroll--anim");
-});
-window.addEventListener("scroll", () => {
-  var position = cardsContainer.getBoundingClientRect();
-  if (position.top < window.innerHeight && position.bottom >= 0) {
-    cardsContainer.classList.add("fade");
-  }
+  scrollY >= 200
+    ? cardsContainer.classList.add("fade")
+    : cardsContainer.classList.remove("fade");
 });

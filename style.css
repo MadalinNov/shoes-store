@@ -11,13 +11,13 @@ body {
   min-height: auto;
   font-family: "Poppins", sans-serif;
   background-color: #f6f5f1;
+  overflow-x: hidden;
 }
 
 body .Global--wrapper {
   position: relative;
   width: auto;
   height: auto;
-  overflow-x: hidden;
 }
 
 body .Global--wrapper #Navbar {
@@ -299,6 +299,11 @@ body .Global--wrapper #Header--section .Header--text button:hover {
 body .Global--wrapper #Header--section .Header--text button:active {
   -webkit-transform: scale(0.97);
           transform: scale(0.97);
+}
+
+body .Global--wrapper #Header--section .Header--text button a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body .Global--wrapper #New--stock {
